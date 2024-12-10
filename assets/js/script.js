@@ -29,3 +29,15 @@ btnDeleteName.addEventListener("click", () => {
 
 
 //Esercizio 2
+
+let counter = document.getElementById("timer");
+let count = sessionStorage.getItem("count") ? parseInt(sessionStorage.getItem("count")) : 0; 
+//operatore ternario per verificare se count ha valore da session storage e quindi da stringa trasformarlo in valore numerico intero
+
+setInterval(()=> {
+    count++,
+    counter.innerText =`${count} Secondi di visualizzazione`;
+    sessionStorage.setItem("count", count);
+
+}, 1000);
+
