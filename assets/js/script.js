@@ -1,23 +1,31 @@
+//Esercizio 1
+
+
 let inputElement = document.getElementById("input");
 let userName = document.getElementById("inputName");
 let btnSaveName = document.getElementById("btnSave");
 let btnDeleteName = document.getElementById("btnDelete");
 
-const savedName = localStorage.getItem("nome");
+//verifico se ci sono nomi già presenti
+const savedName = localStorage.getItem("nome");//qui creo la variabile per recuperare i valori dal local storage(getItem)
 if (savedName) {
-  inputElement.textContent = `Ciao, ${savedName}`;
+  inputElement.innerText = `Ciao, ${savedName}`;
 } else {
-  inputElement.textContent = "No data";
+  inputElement.innerText = "No data";
 }
 
+//Al click del bottone add mi scrivo l'input html ma anche i valori nel local storage(setItem)
 btnSaveName.addEventListener("click", () => {
-  let nome = userName.value;
-  inputElement.textContent = `Ciao, ${nome}`;
-  localStorage.setItem("nome", nome);
+  inputElement.innerText = `Ciao, ${userName.value}`;
+  localStorage.setItem("nome", userName.value);
 });
 
+//al click del bottone delete  svuoto e poi scrivo no data, rimuovendo dal local storage il valore
 btnDeleteName.addEventListener("click", () => {
   userName.value = "";
-  inputElement.textContent = "No data";
+  inputElement.innerText = "No data";
   localStorage.removeItem("nome");
 });
+
+
+//Esercizio 2
