@@ -9,14 +9,14 @@ let btnDeleteName = document.getElementById("btnDelete");
 //verifico se ci sono nomi già presenti
 const savedName = localStorage.getItem("nome");//qui creo la variabile per recuperare i valori dal local storage(getItem)
 if (savedName) {
-  inputElement.innerText = `Ciao, ${savedName}`;
+  inputElement.innerText = `Ciao ${savedName}!`;
 } else {
   inputElement.innerText = "No data";
 }
 
 //Al click del bottone add mi scrivo l'input html ma anche i valori nel local storage(setItem)
 btnSaveName.addEventListener("click", () => {
-  inputElement.innerText = `Ciao, ${userName.value}`;
+  inputElement.innerText = `Ciao ${userName.value}!`;
   localStorage.setItem("nome", userName.value);
 });
 
